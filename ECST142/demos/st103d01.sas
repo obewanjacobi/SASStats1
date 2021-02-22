@@ -1,10 +1,14 @@
 /*st103d01.sas*/  /*Part A*/
+
+*proc print data=stat1.ameshousing3;
+*run;
+
 ods graphics off;
 proc means data=STAT1.ameshousing3
            mean var std nway;
     class Season_Sold Heating_QC;
     var SalePrice;
-    format Season_Sold Season.;
+    format Season_Sold Season.; *fun fact this format DOES NOT WORK;
     title 'Selected Descriptive Statistics';
 run;
 

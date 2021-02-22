@@ -4,21 +4,29 @@
 /*st104d02.sas*/
 ods graphics on;
 proc glmselect data=STAT1.ameshousing3 plots=all;
-	STEPWISEAIC: model SalePrice = &interval / selection=stepwise details=steps select=AIC;
+	STEPWISEAIC: model SalePrice = &interval / selection=stepwise 
+	details=steps select=AIC;
 	title "Stepwise Model Selection for SalePrice - AIC";
 run;
+title;
 
 proc glmselect data=STAT1.ameshousing3 plots=all;
-	STEPWISEBIC: model SalePrice = &interval / selection=stepwise details=steps select=BIC;
+	STEPWISEBIC: model SalePrice = &interval / selection=stepwise 
+	details=steps select=BIC;
 	title "Stepwise Model Selection for SalePrice - BIC";
 run;
+title;
 
 proc glmselect data=STAT1.ameshousing3 plots=all;
-	STEPWISEAICC: model SalePrice = &interval / selection=stepwise details=steps select=AICC;
+	STEPWISEAICC: model SalePrice = &interval / selection=stepwise 
+	details=steps select=AICC;
 	title "Stepwise Model Selection for SalePrice - AICC";
 run;
+title;
 
 proc glmselect data=STAT1.ameshousing3 plots=all;
-	STEPWISESBC: model SalePrice = &interval / selection=stepwise details=steps select=SBC;
+	STEPWISESBC: model SalePrice = &interval / selection=stepwise 
+	details=steps select=SBC;
 	title "Stepwise Model Selection for SalePrice - SBC";
 run;
+title;
